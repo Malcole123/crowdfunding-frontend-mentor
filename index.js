@@ -35,10 +35,10 @@ function main(){
     $('#controlNavMenu').on('click',()=>{
         $('.nav-links').toggleClass('show');
         if(menuOpen === false){
-            $('#controlNavMenu').attr('src','/images/icon-close-menu.svg');
+            $('#controlNavMenu').attr('src','images/icon-close-menu.svg');
             menuOpen = true; 
         }else{
-            $('#controlNavMenu').attr('src','/images/icon-hamburger.svg');
+            $('#controlNavMenu').attr('src','images/icon-hamburger.svg');
             menuOpen = false;
         }
     })
@@ -60,11 +60,11 @@ function main(){
  
     $bookmarkBtn.on('click',()=>{
         if(bookmarked=== false){
-            $bookmarkImg.attr('src','/images/icon-bookmark-active.svg');
+            $bookmarkImg.attr('src','images/icon-bookmark-active.svg');
             $bookmarkImg.addClass('bookmarked')
             bookmarked = true
         }else{
-            $bookmarkImg.attr('src','/images/icon-bookmark.svg');
+            $bookmarkImg.attr('src','images/icon-bookmark.svg');
             $bookmarkImg.removeClass('bookmarked');
             bookmarked = false
         }
