@@ -14,7 +14,7 @@ var $pledgeInput = $modalpledgeCard.find('input')
 var $contiueBtn = $('.continue-btn');
 var $radioBtn = $modalpledgeCard.children().children().children();
 var $progressBar = $('.progressMade');
-//Tracking variables
+//Tracking variable
 var userPledge = 0
 var minPledge =1;
 var minMet = false
