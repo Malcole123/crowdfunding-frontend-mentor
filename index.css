@@ -14,7 +14,7 @@ html{
 }
 .header{
     height:50vh;
-    background:url(/images/image-hero-desktop.jpg);
+    background:url(images/image-hero-desktop.jpg);
     background-size:cover;
     background-position:center;
 }
