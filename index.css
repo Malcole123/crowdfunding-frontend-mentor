@@ -237,6 +237,7 @@ nav{
 }
 .modal-header img{
     transform:translateY(-10px);
+    cursor:pointer;
 }
 .headerInfo h2{
     margin-bottom:20px;
