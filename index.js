@@ -214,7 +214,7 @@ function setChoice(choice){
             allChoices[i].className = "pledge-hidden";
             allChoices[i].parentElement.style.border = "0.5px solid #ccc";
             radio = allChoices[i].parentElement.firstElementChild.children[0].children;
-            radio[0].classList.add('select-play-radio');
+            radio[0].classList.remove('select-play-radio');
         }
     }
 }
