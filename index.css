@@ -1,0 +1,660 @@
+:root{
+    --dark-bg: hsl(176, 72%, 28%);
+    --light-bg:hsl(176, 50%, 47%);
+    --ff-main:'Commissioner', sans-serif;
+}
+*{
+    margin:0;
+    padding:0
+}
+
+html{
+    font-family: var(--ff-main);
+    background:hsl(0, 0%, 94%);
+}
+.header{
+    height:50vh;
+    background:url(/images/image-hero-desktop.jpg);
+    background-size:cover;
+    background-position:center;
+}
+nav{
+    display:flex;
+    width:80%;
+    padding:20px 40px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.nav-links{
+    padding: 0 40px;
+}
+#controlNavMenu{
+    display:none;
+}
+.nav-links ul li{
+    display:inline-block;
+    padding: 0 15px;
+
+}
+.nav-links ul li a{
+    color:#fff;
+    font-size:0.9rem;
+    text-decoration: none;   
+}
+
+/*Header end*/
+.goalTrack{
+    transform:translateY(-80px);
+    width:50%;
+    margin:0 auto;
+}
+.goalTrack-header,.goalTrack-stats{
+    background:#fff;
+    text-align: center;
+    border-radius: 8px;
+    padding:10px 30px;
+}
+.goalTrack-header #fundLogo{
+    transform:translateY(-38px)
+}
+.goalTrack-header p{
+    color:hsl(0, 0%, 48%);
+    margin: 20px auto 45px auto;
+}
+.track-header-buttons{
+    display:flex;
+    width:90%;
+    margin:18px auto;
+    justify-content: space-between;
+    align-items:center;
+    text-align: left;
+}
+.track-header-buttons a{
+    text-decoration: none;
+    background:var(--light-bg);
+    color:#fff;
+    font-weight: 500;
+    padding:12px 18px;
+    border-radius:8pc;
+}
+.track-header-buttons a:hover{
+    background:var(--dark-bg)
+}
+
+.bookmarkBtn{
+    display:flex;
+    cursor:pointer;
+}
+.bookmarkBtn img{
+    height:40px;
+    z-index:2;
+    transform: translateX(25px);
+}
+.bookmarkBtn span{
+    background:hsl(0, 0%, 94%);
+    padding:10px 14px 10px 28px;
+    border-radius: 0 30px 30px 0;
+    font-weight:700;
+    color:hsl(0, 0%, 48%);
+    font-size:1rem;
+}
+.bookmarkBtn .bookmarked{
+    color:var(--dark-bg);
+}
+.goalTrack-stats{
+    margin:25px auto;
+    text-align:left;
+}
+.stats{
+    display:flex;
+    padding:20px 0;
+    gap:0
+}
+.stats span{
+    font-size:0.8rem;
+    color:hsl(0, 0%, 48%);
+}
+.currentState,.timeLeft{
+    padding: 0 45px;
+
+}
+.numofTrackers{
+    border-right:0.8px solid hsla(0, 0%, 48%,0.368);
+    border-left:0.8px solid hsla(0, 0%, 48%, 0.368);
+    padding: 0 45px;
+
+}
+.progressBar{
+    width:100%;
+    height:8px;
+    border-radius:8pc;
+    background:hsl(0, 2%, 90%);
+    margin:20px auto 40px auto;
+}
+.progressMade{
+    height:100%;
+    width:0%;
+    max-width:100%;
+    background:var(--light-bg);
+    border-radius:8pc;
+}
+/*Pledge body start*/
+.pledge-body{
+    background:#fff;
+    padding:25px 40px;
+}
+.pledge-body h4{
+    margin-bottom:30px;
+}
+.pledge-body p{
+    color:hsl(0, 0%, 48%);
+    margin-bottom:30px;
+
+}
+.pledge-card{
+    padding:20px 25px;
+    border:0.5px solid hsl(0, 0%, 48%);
+    margin: 18px auto;
+    border-radius: 6px;   
+}
+.pledge-head{
+    display:flex;
+    justify-content:space-between;
+}
+.pledge-head span{
+    color:var(--light-bg);
+    font-size:0.8rem;
+    font-weight:500;
+}
+.pledge-footer{
+    display:flex;
+    justify-content:space-between;
+}
+.pledge-footer h2{
+    display:inline-block
+}
+.pledge-footer sup{
+    font-weight:400;
+    font-size:0.7rem;
+    padding:0 4px;
+    display:inline-block
+}
+.active-btn{
+    text-decoration: none;
+    background:var(--light-bg);
+    color:#fff;
+    font-weight: 500;
+    padding:8px 12px;
+    border-radius:8pc;
+    font-size:0.8rem;
+}
+.disbaled-btn{
+    text-decoration: none;
+    background:hsl(0, 0%, 48%);
+    color:#fff;
+    font-weight: 500;
+    padding:8px 12px;
+    border-radius:8pc;
+    font-size:0.8rem;
+    opacity:0.6;
+    cursor:default;
+}
+.disabled{
+    opacity:0.5;
+}
+/*Modal Start*/
+/*Modal control states*/
+.showModal{
+    display:block;
+}
+/*Control state end*/
+.modal{
+    background:rgba(0,0,0,0.4);
+    position:fixed;
+    display:none;
+    top:0;
+    left:0;
+    height:100vh;
+    width:100vw;
+    z-index:99;
+    overflow-y: scroll;
+}
+.modal-card{
+    width:50%;
+    margin:180px auto auto;
+    background:#fff;
+    border-radius: 15px;
+    padding:40px 30px;
+}
+.modal-card p{
+    color:hsl(0, 0%, 48%);
+}
+.modal-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.modal-header img{
+    transform:translateY(-10px);
+}
+.headerInfo h2{
+    margin-bottom:20px;
+}
+.headerInfo p{
+    font-size:0.9rem;
+    margin-bottom:20px;
+}
+/*Modal card css*/
+.modal-pledge-card{
+    border: 0.5px solid hsl(0, 0%, 48%);
+    border-radius:8px;
+    padding:20px 24px;
+    margin: 25px auto;
+}
+.pledge-visible{
+    display:flex;
+    justify-content:space-evenly;
+    margin-bottom:25px
+}
+.pledge-hidden{
+    display:none;
+    justify-content:space-between;
+    padding:35px 10px 15px 10px;
+    border-top: 0.5px solid hsl(0, 0%, 48%);
+}
+.unselected{
+    display:none;
+}
+.selected{
+    display:flex;
+}
+#pledge,.continue-btn{
+    width:50px;
+    padding:12px 14px;
+    border-radius:26px;
+}
+.continue-btn{
+    background: var(--light-bg);
+    text-decoration: none;
+    color:#fff;
+    margin-left:15px;
+}
+.continue-btn:hover{
+    background:var(--dark-bg)
+}
+#pledge{
+    outline: none;
+    padding-left:30px;
+    border:0.5px solid  hsl(0, 0%, 48%);
+    background: url(/images/icon-dollar.svg);
+    background-size: 8px;
+    background-repeat: no-repeat;
+    background-position:top 13px left 10px;
+}
+#pledge::-webkit-inner-spin-button{
+    display:none;
+}
+#pledge:focus{
+    border-width: 2px;
+    border-color:var(--light-bg)
+}
+#pledge .error{
+    border-color:#f44336;
+}
+
+.radio-outer{
+    border:0.5px solid #ccc;
+    height:14px;
+    width:14px;
+    border-radius:300px;
+    padding:3px;
+}
+.radio-in{
+    margin:auto;
+    opacity:0;
+    background:var(--light-bg);
+    height:13px;
+    width: 12px;
+    border-radius: 300px;
+}
+.select-play-radio{
+    animation:selectRadio 0.2s linear forwards;
+}
+@keyframes selectRadio {
+    0%{
+        transform:translateX(-60px);
+        opacity:0;
+        display:block;
+    }
+    25%{
+        transform:translateX(-45px);
+        opacity:0.25
+    }
+    50%{
+        transform:translateX(-30px);
+        opacity:0.5;
+    }
+    75%{
+        transform:translateX(-15px);
+        opacity:0.75;
+    }
+    100%{
+        transform: translateX(0);
+        opacity:1;
+        display:block;
+    }
+
+}
+
+.cardInfo{
+    margin:0 20px;
+    width:100%;
+}
+.cardInfo h4{
+    margin-bottom:20px;
+    display:inline-block;
+    width:30%;
+}
+.modal-pledge-display{
+    display:inline-block;
+    color:var(--light-bg);
+    font-weight:700;
+    width:58%;
+}
+.modalamtLeft{
+    display:inline-block;
+    text-align: right;
+    margin:0;
+}
+.modalamtLeft{
+    color:#333;
+    font-weight:700;
+}
+.modalamtLeft sup{
+    padding:5px 8px;
+    color:hsl(0, 0%, 48%);
+    font-weight: 500;
+}
+/*Success modal start*/
+.success-modal{
+    width:30%;
+    margin:180px auto;
+    height:fit-content;
+    background:#fff;
+    text-align: center;
+    padding:25px 25px;
+    border-radius:10px;
+    display: none;
+}
+.success-modal img{
+    margin:35px auto;
+    animation:bounce 6s linear infinite;
+}
+.success-modal h2{
+    margin:20px auto;
+}
+.success-modal p{
+    color:hsl(0, 0%, 48%);
+    margin:20px auto;
+    padding-bottom:20px;
+}
+.success-modal a{
+    text-decoration: none;
+    background:var(--light-bg);
+    color:#fff;
+    font-weight: 500;
+    padding:12px 18px;
+    border-radius:8pc;
+    margin:35px auto;
+}
+.success-modal a:hover{
+    background:var(--dark-bg);
+}
+@keyframes bounce {
+    0%{
+       transform:none 
+    }
+    10%{
+        transform:rotate(360deg)
+    }
+    20%{
+        transform:translateY(-6px)
+    }
+    30%{
+        transform:translateY(6px)
+    }
+    40%{
+        transform:rotate(360deg)
+    }
+    50%{
+        transform:translateY(-6px)
+    }
+    60%{
+        transform:translateY(6px)
+    }
+    70%{
+        transform:rotate(360deg)
+    }
+    80%{
+        transform:rotate(-360deg)
+    }
+    90%{
+        transform:translateY(-20px);
+        opacity:0.6
+    }
+    100%{
+        transform:translateX(0);
+        opacity:0
+    }
+}
+.mobile,.mobile + sup{
+    display:none;
+}
+@media(max-width:768px){
+    nav{
+        padding:20px 10px;
+        margin:0 auto;
+        justify-content:space-between;
+        width:95%;
+    }
+    .nav-links{
+        position:fixed;
+        margin-right:20px;
+        height:200px;
+        top:-270px;
+        right:20px;
+        left:20px;
+        background:#fff;
+        border-radius: 8px;
+        text-align: center;
+        z-index: 99;
+        box-shadow:20px 20px 100px 20px rgba(0,0,0,0.4);
+        transform: translate();
+    }
+    .show{
+        top:70px;
+    }
+    #controlNavMenu{
+        display:block;
+    }
+    .nav-links ul li{
+        display:block;
+        padding:20px 10px;
+        border-bottom:0.4px solid #333
+    }
+    .nav-links ul li a{
+        color:#333;
+    }
+    .goalTrack{
+        width: 90%;
+    }
+    .track-header-buttons a{
+        width:60%;
+        text-align: center;
+    }
+    .bookmarkBtn img{
+    height:56px;
+    }
+    .bookmarkBtn span{
+        display:none;
+    }
+    .stats{
+        flex-direction:column;
+        margin:0 auto;
+        width:100%;
+        text-align: center;
+    }
+    .numofTrackers,.timeLeft,.currentState{
+        border:none;
+        padding:15px 0;
+    }
+    .currentState::after,.numofTrackers::after{
+        content:'';
+        width:30%;
+        display:block;
+        margin:15px auto;
+        height:1px;
+        background:rgba(51, 51, 51, 0.473);
+    }
+    .progressBar,.progressMade{
+        height:12px;
+    }
+    .pledge-head{
+        flex-direction: column;
+        justify-content: start;
+        width:fit-content;
+        height:fit-content;
+        padding:0;
+        margin:0;
+
+    }
+    .pledge-head h4{
+        padding:0;
+        margin-bottom:8px;
+    }
+    .pledge-head span{
+        margin:0;
+        padding:0;
+        font-weight:700;
+        font-size:0.9rem;
+        margin-bottom:16px;    
+    }
+    .pledge-footer{
+        flex-direction: column;
+        width:50%;
+        gap:20px;
+    }
+    .pledge-footer a{
+        padding:16px 10px;
+        text-align:center;
+    }
+    .modal-card{
+        width:75%;
+        height:fit-content
+    }
+    .modal-pledge-card:hover{
+        border:3px solid var(--light-bg)
+    }
+    .pledge-visible{
+        flex-direction: column;
+    }
+    input[type="radio"]{
+        display: inline-block;
+    }
+    .cardInfo h4{
+        display:inline-block;
+        width:100%;
+    }
+    .cardInfo span{
+        width:100%;
+        margin-bottom: 10px;
+    }
+    .modalamtLeft,.modalamtLeft + sup{
+        display:none;
+    }
+    .mobile,.mobile + sup{
+        display:block;
+        text-align: left;
+    }
+    .mobile +sup{
+        display: inline-block;
+    }
+    .modalamtLeft{
+        font-weight:700;
+        margin-top:25px;
+    }
+    .pledge-hidden{
+        flex-direction: column;
+        text-align: center;
+        gap:15px
+    }
+    .success-modal{
+        width:80%;
+    }
+}
+@media (max-width:424px) {
+    .goalTrack{
+        width:100%;
+        padding:0;
+    }
+    .pledge-body{
+        width:90%;
+        margin:0 auto;
+        padding:0
+    }
+    .pledge-card{
+        width:85%;
+        margin:20px auto;
+        padding:10px 15px;
+    }
+    .pledge-card p{
+        font-size:0.8rem;
+        font-weight:500;
+    }
+    .pledge-footer{
+        width: 80%;
+        padding:10px 8px;
+        margin:0;
+        flex-direction: column;
+    }
+    .pledge-footer h2{
+        margin:0;
+        padding:0;
+    }
+    .pledge-footer a{
+        display:block;
+        width:100%;
+        margin:0;
+    }
+    .modal-card{
+        padding:20px 10px;
+        width:90%;
+    }
+    .pledge-hidden{
+        padding:20px 10px;
+        justify-content: space-between;
+        width:100%;
+        padding:10px 0;
+    }
+    .cardInfo p{
+        font-size:0.9rem;
+        font-weight:500;
+    }
+    .pledge-buttons{
+        width:100%
+    }
+    .pledge-buttons a{
+        display:block;
+        width:90%;
+        margin:10px auto;
+    }
+    #pledge{
+        display:block;
+        width:90%;
+        margin:10px auto;
+        padding:15px 0;
+        text-align:center
+    }
+  
+}
